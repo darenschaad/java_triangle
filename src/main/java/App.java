@@ -8,6 +8,7 @@ public class App {
   public static void main(String[] args) {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
+    String body = "templates/home.vtl";
 
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
@@ -25,7 +26,7 @@ public class App {
 
       Triangle myTriangle = new Triangle(sideA, sideB, sideC);
       model.put("myTriangle", myTriangle);
-
+      model.put("body", body);
       model.put("template", "templates/triangle.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
