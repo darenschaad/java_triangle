@@ -5,6 +5,11 @@
 #if ($myTriangle.isTriangle())
   <p><h3>It's a triangle!</h3></p>
   <h3>It's a $myTriangle.triangleType() triangle</h3>
+  #if ($myTriangle.isRightTriangle())
+  <h3>This is also a right triangle.</h3>
+  #end
 #else
-  <p><h3>That isn't a triangle!</h3></p>
+<div class="wrong">
+  <h3>That isn't a triangle!</h3>
+</div>
 #end

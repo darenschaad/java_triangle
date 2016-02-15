@@ -22,7 +22,7 @@ public class Triangle {
   }
 
   public boolean isTriangle() {
-    if (((mSideA + mSideB) < mSideC) || ((mSideA + mSideC) < mSideB) || ((mSideC + mSideB) < mSideA)){
+    if (((mSideA + mSideB) <= mSideC) || ((mSideA + mSideC) <= mSideB) || ((mSideC + mSideB) <= mSideA)){
       return false;
     }
     else {
@@ -40,6 +40,14 @@ public class Triangle {
     }
     else {
       return "scalene";
+    }
+  }
+  public boolean isRightTriangle(){
+    if (mSideA * mSideA + mSideB * mSideB  == mSideC * mSideC || mSideC * mSideC + mSideB * mSideB  == mSideA * mSideA || mSideC * mSideC + mSideA * mSideA  == mSideB * mSideB) {
+      return true;
+    }
+    else {
+      return false;
     }
   }
 }
